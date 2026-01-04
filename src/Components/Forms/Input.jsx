@@ -1,4 +1,4 @@
-const Input = ({ label, type, name }) => {
+const Input = ({ label, type, name , value, onChange, error, onBlur}) => {
   return (
     <div className='mb-4'>
       <label className="block text-base pb-2 " htmlFor={name}>{label}</label>
@@ -7,8 +7,11 @@ const Input = ({ label, type, name }) => {
         id={name} 
         name={name}
         type={type}
+        value={value}
+        onChange={onChange}
+        onBlur={onBlur}
       />
-      <p className="text-red-500 text-sm mt-1">Error</p>  
+      {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
     </div>
   );
 };
