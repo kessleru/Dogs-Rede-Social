@@ -4,7 +4,7 @@ import { UserContext } from '../UserContext';
 import { useContext } from 'react';
 
 const Header = () => {
-  const { data } = useContext(UserContext);
+  const { data, userLogout } = useContext(UserContext);
 
   return (
     <header className='shadow-sm fixed w-full z-50 bg-white top-0'>
@@ -13,12 +13,17 @@ const Header = () => {
           <Dogs />
         </Link>
         {data ? (
-          <Link
-            className='text-neutral-800 flex items-center after:content-[""] after:inline-block after:ml-2 after:w-[14px] after:h-[17px] after:user-icon after:bg-no-repeat after:bg-center after:relative after:-top-0.5px'
-            to='/conta'
-          >
-            {data.nome}
-          </Link>
+          <>
+            <Link
+              className='text-neutral-800 flex items-center after:content-[""] after:inline-block after:ml-2 after:w-[14px] after:h-[17px] after:user-icon after:bg-no-repeat after:bg-center after:relative after:-top-0.5px'
+              to='/conta'
+            >
+              {data.nome}
+            </Link>
+            <button type='button' onClick={userLogout}>
+              Sair
+            </button>
+          </>
         ) : (
           <Link
             className='text-neutral-800 flex items-center after:content-[""] after:inline-block after:ml-2 after:w-[14px] after:h-[17px] after:user-icon after:bg-no-repeat after:bg-center after:relative after:-top-0.5px'

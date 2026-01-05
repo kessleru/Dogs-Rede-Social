@@ -35,10 +35,6 @@ export default [
       'react/jsx-uses-vars': 'warn',
       'react/react-in-jsx-scope': 'off',
       'react/prop-types': 'off',
-      'react-refresh/only-export-components': [
-        'warn',
-        { allowConstantExport: true },
-      ],
       'no-unsafe-finally': 'off',
       'no-unused-vars': 'warn',
     },
