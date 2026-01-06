@@ -4,7 +4,7 @@ import Button from '../Forms/Button';
 import useForm from '../../Hooks/useForm';
 import { useContext } from 'react';
 import { UserContext } from '../../UserContext';
-import Error from '../Helper/error';
+import Error from '../Helper/Error';
 
 const LoginForm = () => {
   const username = useForm();
