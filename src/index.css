@@ -1,17 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Spectral:wght@700&display=swap');
 @import 'tailwindcss';
 
+/* =====================
+   UTILITIES
+===================== */
+
 @utility container {
   padding: 0 1rem;
   margin: 0 auto;
 
-  @media (width >= 40rem /* 640px */) {
-    max-width: 50rem /* 800px */;
+  @media (width >= 40rem) {
+    max-width: 50rem;
   }
 }
 
-@utility shadow-glow { 
-  box-shadow: 0 0 5px #fea, 0 0 6px #fb1; 
+@utility shadow-glow {
+  box-shadow: 0 0 5px #fea, 0 0 6px #fb1;
 }
 
 @utility user-icon {
@@ -30,18 +34,23 @@
   position: relative;
 }
 
+
+/* =====================
+   THEME
+===================== */
+
 @theme {
+  --font-first: Helvetica, Arial, sans-serif;
+  --font-second: 'Spectral', Georgia;
+
   --animate-animeLeft: animeLeft 0.3s ease-in-out forwards;
 
-  --font-first: Helvetica, Arial, sans-serif;
-  --font-second: 'Spectral', georgia;
-
   @keyframes animeLeft {
-    0% {
+    from {
       opacity: 0;
       transform: translateX(-20px);
     }
-    100% {
+    to {
       opacity: 1;
       transform: translateX(0);
     }
