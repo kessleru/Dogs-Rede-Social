@@ -35,12 +35,14 @@ const LoginCreate = () => {
         <Input label='Usuário' type='text' name='username' {...username} />
         <Input label='Email' type='text' name='email' {...email} />
         <Input label='Senha' type='password' name='password' {...password} />
-        {loading ? (
-          <Button disabled>Cadastrando...</Button>
-        ) : (
-          <Button>Cadastrar</Button>
-        )}
-        <Error error={error} />
+        <div className='flex flex-col items-start'>
+          {loading ? (
+            <Button disabled>Cadastrando...</Button>
+          ) : (
+            <Button>Cadastrar</Button>
+          )}
+          <Error error={error} />
+        </div>
       </form>
     </section>
   );
