@@ -15,7 +15,7 @@ const Header = () => {
         {data ? (
           <>
             <Link
-              className='text-neutral-800 font-semibold flex items-center after:p-4 after:border after:rounded-full after:bg-neutral-200 after:content-[""] after:inline-block after:ml-2 after:w-3.5 after:h-4.25 after:user-icon after:bg-no-repeat after:bg-center after:relative after:-top-0.5px active:scale-95 duration-150 transition'
+              className='text-neutral-800 font-semibold flex items-center after:p-4 after:border after:rounded-full after:bg-neutral-200/50 after:content-[""] after:inline-block after:ml-2 after:w-3.5 after:h-4.25 after:user-icon after:bg-no-repeat after:bg-center after:relative after:-top-0.5px active:scale-95 duration-150 transition'
               to='/conta'
             >
               {data.nome}
