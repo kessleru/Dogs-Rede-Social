@@ -12,7 +12,7 @@ const User = () => {
       <Routes>
         <Route index element={<Feed />} />
         <Route path='postar' element={<UserPhotoPost />} />
-        <Route path='estastisticas' element={<UserStats />} />
+        <Route path='estatisticas' element={<UserStats />} />
       </Routes>
     </section>
   );
