@@ -43,7 +43,7 @@ const LoginForm = () => {
       </Link>
       <div className='mt-8 sm:mt-18'>
         <h2 className='font-second text-3xl after:block after:bg-neutral-200 after:w-12 after:h-2 after:rounded-md'>
-          Cadastra-se
+          Cadastrar-se
         </h2>
         <p className='mt-4'>Ainda não possue conta? Cadastra-se no site.</p>
         <Link
