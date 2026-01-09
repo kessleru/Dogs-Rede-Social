@@ -6,6 +6,7 @@ import Estatisticas from '../../Assets/estatisticas.svg?react';
 import AdicionarFoto from '../../Assets/adicionar.svg?react';
 import Sair from '../../Assets/sair.svg?react';
 import useMedia from '../../Hooks/useMedia';
+import styles from './UserHeaderNav.module.css';
 
 const UserHeaderNav = () => {
   const { userLogout } = useContext(UserContext);
@@ -30,13 +31,13 @@ const UserHeaderNav = () => {
       {mobile && (
         <button
           aria-label='Menu'
-          className={`mobileButton ${mobileMenu && 'mobileButtonActive'}`}
+          className={`${styles.mobileButton} ${mobileMenu && styles.mobileButtonActive}`}
           onClick={() => setMobileMenu(!mobileMenu)}
         ></button>
       )}
 
       <nav
-        className={`${mobile ? `navMobile ${mobileMenu && 'navMobileActive'}` : 'grid grid-cols-4 gap-4 *:bg-neutral-100 *:rounded-md *:size-10 *:flex *:items-center *:justify-center *:transition *:duration-150 *:border *:border-transparent *:outline-none *:active:scale-95 *:hover:bg-white *:hover:shadow-[0_0_0_3px_#eee] *:focus:bg-white *:focus:shadow-[0_0_0_3px_#eee] [&_.active]:bg-white [&_.active]:shadow-glow [&_.active]:border-[#fb1] [&_.active_svg_*]:fill-[#fb1]'}`}
+        className={`${mobile ? `${styles.navMobile} ${mobileMenu && styles.navMobileActive}` : styles.nav}`}
       >
         <NavLink to='/conta' end>
           <MinhasFotos />

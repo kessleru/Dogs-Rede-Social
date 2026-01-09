@@ -31,6 +31,7 @@ export default [
       'react-refresh': reactRefresh,
     },
     rules: {
+      ...react.configs.flat.recommended.rules,
       ...reactHooks.configs.recommended.rules,
       'react/jsx-uses-vars': 'warn',
       'react/react-in-jsx-scope': 'off',

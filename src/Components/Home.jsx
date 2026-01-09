@@ -1,7 +1,11 @@
+import Feed from './Feed/Feed';
+
 const Home = () => {
   return (
     <div>
-      <p>Testtestettststsdt</p>
+      <section className='container mainContainer'>
+        <Feed />
+      </section>
     </div>
   );
 };
