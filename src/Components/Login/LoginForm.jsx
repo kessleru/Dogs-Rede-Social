@@ -45,7 +45,7 @@ const LoginForm = () => {
         <h2 className='font-second text-3xl after:block after:bg-neutral-200 after:w-12 after:h-2 after:rounded-md'>
           Cadastrar-se
         </h2>
-        <p className='mt-4'>Ainda não possue conta? Cadastra-se no site.</p>
+        <p className='mt-4'>Ainda não possue conta? Cadastrar-se no site.</p>
         <Link
           to='/login/criar'
           className='inline-block text-center font-first text-base cursor-pointer rounded-md bg-amber-400 text-amber-950 py-3 px-5 min-w-32 mt-4 sm:mt-8 transition-all duration-200 select-none hover:shadow-glow focus:shadow-glow focus:outline-none disabled:opacity-50 disabled:cursor-wait disabled:shadow-none'
