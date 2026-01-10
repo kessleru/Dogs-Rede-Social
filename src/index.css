@@ -35,6 +35,10 @@
   background: url('./Assets/visualizacao.svg') no-repeat center center;
 }
 
+@utility view-icon-black {
+  background: url('./Assets/visualizacao-black.svg') no-repeat center center;
+}
+
 @utility title {
   line-height: 1;
   font-size: 3rem;
@@ -52,6 +56,8 @@
 
   --animate-animeLeft: animeLeft 0.3s ease-in-out forwards;
 
+  --animate-scaleUp: scaleUp 0.2s ease-out forwards;
+
   @keyframes animeLeft {
     from {
       opacity: 0;
@@ -60,6 +66,17 @@
     to {
       opacity: 1;
       transform: translateX(0);
+    }
+  }
+
+  @keyframes scaleUp {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: initial;
     }
   }
 }

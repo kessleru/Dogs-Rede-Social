@@ -5,7 +5,7 @@ import { PHOTOS_GET } from '../../api';
 import Error from '../Helper/Error';
 import Loading from '../Helper/Loading';
 
-const FeedPhotos = () => {
+const FeedPhotos = ({ setModalPhoto }) => {
   const { data, loading, error, request } = useFetch();
 
   useEffect(() => {
@@ -23,7 +23,11 @@ const FeedPhotos = () => {
     return (
       <ul className='animate-animeLeft grid grid-cols-3 gap-4 mb-4 justify-center max-sm:grid-cols-2'>
         {data.map((photo) => (
-          <FeedPhotosItem key={photo.id} photo={photo} />
+          <FeedPhotosItem
+            key={photo.id}
+            photo={photo}
+            setModalPhoto={setModalPhoto}
+          />
         ))}
       </ul>
     );
