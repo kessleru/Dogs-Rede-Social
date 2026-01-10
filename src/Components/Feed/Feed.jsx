@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import FeedPhotos from './FeedPhotos'
 import FeedModal from './FeedModal'
 
