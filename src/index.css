@@ -27,8 +27,13 @@
 }
 
 @utility bg-login {
-  background: url('./Assets/login.jpg') no-repeat center center;
-  background-size: cover;
+  background:
+    url('./Assets/login.jpg') no-repeat center center,
+    linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+  background-size:
+    cover,
+    200% 100%;
+  animation: skeleton-shimmer 1.5s infinite linear;
 }
 
 @utility view-icon {
@@ -77,6 +82,19 @@
     to {
       opacity: 1;
       transform: initial;
+    }
+  }
+
+  @keyframes skeleton-shimmer {
+    0% {
+      background-position:
+        center center,
+        -200% 0;
+    }
+    100% {
+      background-position:
+        center center,
+        200% 0;
     }
   }
 }
