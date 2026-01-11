@@ -6,6 +6,7 @@ import LoginPasswordLost from './LoginPasswordLost';
 import { useContext } from 'react';
 import { UserContext } from '../../UserContext';
 import Image from '../Helper/Image';
+import loginImg from '../../Assets/login.jpg';
 
 const Login = () => {
   const { login } = useContext(UserContext);
@@ -16,7 +17,7 @@ const Login = () => {
     <section className='grid grid-cols-2 min-h-[calc(100dvh-4rem)] gap-8 max-sm:grid-cols-1 max-sm:gap-0 max-sm:grid-rows-[1fr_auto] [@media_(max-height:800px)]:grid-cols-1 [@media_(max-height:800px)]:gap-0'>
       <div className='max-sm:hidden [@media_(max-height:800px)]:hidden'>
         <Image
-          src='/src/Assets/login.jpg'
+          src={loginImg}
           alt='Imagem de login'
           className='h-full [&_img]:h-full [&_img]:object-cover'
         />
