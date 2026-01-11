@@ -1,5 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Spectral:wght@700&display=swap');
 @import 'tailwindcss';
+
+/* =====================
+   BASE
+===================== */
+
+body {
+  font-family: var(--font-first);
+}
 
 /* =====================
    UTILITIES
@@ -56,7 +64,7 @@
 ===================== */
 
 @theme {
-  --font-first: Helvetica, Arial, sans-serif;
+  --font-first: 'Roboto', Helvetica, Arial, sans-serif;
   --font-second: 'Spectral', Georgia;
 
   --animate-animeLeft: animeLeft 0.3s ease-in-out forwards;

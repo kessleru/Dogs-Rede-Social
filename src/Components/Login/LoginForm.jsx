@@ -42,13 +42,13 @@ const LoginForm = () => {
         Perdeu a Senha?
       </Link>
       <div className='mt-8 sm:mt-18'>
-        <h2 className='font-second text-3xl after:block after:bg-neutral-200 after:w-12 after:h-2 after:rounded-md'>
+        <h2 className='text-neutral-800 font-second text-3xl after:block after:bg-neutral-200 after:w-12 after:h-2 after:rounded-md'>
           Cadastrar-se
         </h2>
         <p className='mt-4'>Ainda não possue conta? Cadastrar-se no site.</p>
         <Link
           to='/login/criar'
-          className='inline-block text-amber-900 tracking-wider font-bold text-center font-first text-base cursor-pointer rounded-md bg-amber-400 py-3 px-5 min-w-32 mt-4 sm:mt-8 transition duration-150 select-none hover:shadow-glow focus:shadow-glow focus:outline-none disabled:opacity-50 disabled:cursor-wait disabled:shadow-none'
+          className='inline-block text-amber-900 tracking-wider font-bold text-center font-first text-sm cursor-pointer rounded-md bg-amber-400 py-3 px-5 min-w-32 mt-4 sm:mt-8 transition duration-150 select-none uppercase hover:shadow-glow focus:shadow-glow focus:outline-none disabled:opacity-50 disabled:cursor-wait disabled:shadow-none'
         >
           Cadastro
         </Link>
