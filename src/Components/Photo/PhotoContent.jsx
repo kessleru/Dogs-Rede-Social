@@ -1,24 +1,32 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import PhotoComments from './PhotoComments';
+import { UserContext } from '../../UserContext';
+import PhotoDelete from './PhotoDelete';
+import Image from '../Helper/Image';
 
 const PhotoContent = ({ data }) => {
+  const user = useContext(UserContext);
   const { photo, comments } = data;
 
   return (
     <div className='m-auto h-144 rounded-md bg-white grid grid-cols-[36rem_20rem] grid-rows-[auto_1fr_auto] overflow-hidden max-lg:h-auto max-lg:max-h-[calc(100vh-4rem)] max-lg:overflow-y-auto max-lg:grid-cols-[minmax(20rem,40rem)] animate-scaleUp'>
       <div className='row-span-3 max-lg:row-start-1 max-lg:row-end-1'>
-        <img src={photo.src} alt={photo.title} />
+        <Image src={photo.src} alt={photo.title} />
       </div>
       <div className='px-8 pt-8'>
         <div>
           <p className='text-neutral-500 mb-4 flex justify-between items-center'>
-            <Link
-              to={`/perfil/${photo.author}`}
-              className='hover:underline hover:underline-offset-2 hover:text-amber-600 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded-sm'
-            >
-              @{photo.author}
-            </Link>
+            {user.data && user.data.username === photo.author ? (
+              <PhotoDelete id={photo.id} />
+            ) : (
+              <Link
+                to={`/perfil/${photo.author}`}
+                className='hover:underline hover:underline-offset-2 hover:text-amber-600 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded-sm'
+              >
+                @{photo.author}
+              </Link>
+            )}
             <span
               className='flex items-center before:size-4 before:view-icon-black before:inline-block before:mr-1'
               aria-label={`${photo.acessos} visualizações`}

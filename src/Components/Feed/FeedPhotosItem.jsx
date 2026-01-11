@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from '../Helper/Image';
 
 const FeedPhotosItem = ({ photo, setModalPhoto }) => {
   function handleClick() {
@@ -21,7 +22,7 @@ const FeedPhotosItem = ({ photo, setModalPhoto }) => {
       tabIndex={0}
       aria-label={`Ver foto: ${photo.title}`}
     >
-      <img src={photo.src} alt={photo.title} className='[grid-area:1/1]' />
+      <Image src={photo.src} alt={photo.title} className='[grid-area:1/1]' />
       <span
         className='[grid-area:1/1] bg-neutral-950/40 text-white text-center items-center justify-center hidden group-hover:flex group-focus-visible:flex before:size-4 before:inline-block before:mr-1 before:view-icon'
         aria-hidden='true'
