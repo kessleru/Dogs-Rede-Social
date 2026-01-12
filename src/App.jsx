@@ -9,22 +9,24 @@ import ProtectedRoute from './Components/Helper/ProtectedRoute';
 
 const App = () => {
   return (
-    <div className='pt-16'>
+    <div className='flex flex-col min-h-[calc(100vh+10rem)] pt-16'>
       <BrowserRouter>
         <UserStorage>
           <Header />
-          <Routes>
-            <Route index element={<Home />} />
-            <Route path='login/*' element={<Login />} />
-            <Route
-              path='conta/*'
-              element={
-                <ProtectedRoute>
-                  <User />
-                </ProtectedRoute>
-              }
-            />
-          </Routes>
+          <main className='flex-1'>
+            <Routes>
+              <Route index element={<Home />} />
+              <Route path='login/*' element={<Login />} />
+              <Route
+                path='conta/*'
+                element={
+                  <ProtectedRoute>
+                    <User />
+                  </ProtectedRoute>
+                }
+              />
+            </Routes>
+          </main>
           <Footer />
         </UserStorage>
       </BrowserRouter>

@@ -23,7 +23,7 @@ body {
 }
 
 @utility mainContainer {
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 
 @utility shadow-glow {
