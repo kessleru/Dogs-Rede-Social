@@ -5,16 +5,24 @@ import { UserContext } from '../../UserContext';
 import PhotoDelete from './PhotoDelete';
 import Image from '../Helper/Image';
 
-const PhotoContent = ({ data }) => {
+const PhotoContent = ({ data, single }) => {
   const user = useContext(UserContext);
   const { photo, comments } = data;
 
   return (
-    <div className='m-auto h-144 rounded-md bg-white grid grid-cols-[36rem_20rem] grid-rows-[auto_1fr_auto] overflow-hidden max-lg:h-auto max-lg:max-h-[calc(100vh-4rem)] max-lg:overflow-y-auto max-lg:grid-cols-[minmax(20rem,40rem)] animate-scaleUp'>
-      <div className='row-span-3 max-lg:row-start-1 max-lg:row-end-1'>
-        <Image src={photo.src} alt={photo.title} />
+    <div
+      className={`m-auto rounded-md bg-white grid overflow-hidden animate-scaleUp ${single ? 'grid-cols-1 max-w-2xl' : 'h-144 grid-cols-[36rem_20rem] grid-rows-[auto_1fr_auto] max-lg:h-auto max-lg:max-h-[calc(100vh-4rem)] max-lg:overflow-y-auto max-lg:grid-cols-[minmax(20rem,40rem)]'}`}
+    >
+      <div
+        className={`row-span-3 max-lg:row-start-1 max-lg:row-end-1 ${single ? 'overflow-hidden rounded-md' : ''}`}
+      >
+        <Image
+          src={photo.src}
+          alt={photo.title}
+          className={single ? 'rounded-md' : ''}
+        />
       </div>
-      <div className='px-8 pt-8'>
+      <div className={single ? 'pt-8' : 'px-8 pt-8'}>
         <div>
           <p className='text-neutral-500 mb-4 flex justify-between items-center'>
             {user.data && user.data.username === photo.author ? (
@@ -43,7 +51,7 @@ const PhotoContent = ({ data }) => {
           </ul>
         </div>
       </div>
-      <PhotoComments className='px-8' id={photo.id} comments={comments} />
+      <PhotoComments id={photo.id} comments={comments} single={single} />
     </div>
   );
 };

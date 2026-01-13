@@ -5,7 +5,7 @@ import Error from '../Helper/Error';
 import { COMMENT_POST } from '../../api';
 import styles from './PhotoCommentsForm.module.css';
 
-const PhotoCommentsForm = ({ id, setComments }) => {
+const PhotoCommentsForm = ({ id, setComments, single }) => {
   const [comment, setComment] = useState('');
   const { request, error } = useFetch();
 
@@ -21,7 +21,7 @@ const PhotoCommentsForm = ({ id, setComments }) => {
 
   return (
     <form
-      className='grid grid-cols-[1fr_auto] items-stretch m-4 gap-2'
+      className={`grid grid-cols-[1fr_auto] items-stretch gap-2 ${single ? 'my-4' : 'm-4'}`}
       onSubmit={handleSubmit}
     >
       <textarea

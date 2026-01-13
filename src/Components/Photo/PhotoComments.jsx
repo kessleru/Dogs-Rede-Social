@@ -2,9 +2,9 @@ import { useContext, useEffect, useRef, useState } from 'react';
 import { UserContext } from '../../UserContext';
 import PhotoCommentsForm from './PhotoCommentsForm';
 
-const PhotoComments = (props) => {
+const PhotoComments = ({ id, comments: initialComments, single }) => {
   const [comments, setComments] = useState(() => {
-    return props.comments || [];
+    return initialComments || [];
   });
   const commentsSection = useRef(null);
   const { login } = useContext(UserContext);
@@ -17,7 +17,7 @@ const PhotoComments = (props) => {
     <>
       <ul
         ref={commentsSection}
-        className='overflow-y-auto break-all px-8 *:mb-2 *:leading-[1.2]'
+        className={`overflow-y-auto break-all *:mb-2 *:leading-[1.2] ${single ? '' : 'px-8'}`}
         aria-label='Comentários da foto'
       >
         {comments.map((comment) => (
@@ -27,7 +27,9 @@ const PhotoComments = (props) => {
           </li>
         ))}
       </ul>
-      {login && <PhotoCommentsForm id={props.id} setComments={setComments} />}
+      {login && (
+        <PhotoCommentsForm id={id} setComments={setComments} single={single} />
+      )}
     </>
   );
 };
