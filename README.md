@@ -1,4 +1,6 @@
-# 🐕 Dogs - Rede Social
+<div align="center">
+  <img src="readme_photos/Title-Logo.svg" alt="Dogs - Rede Social" />
+</div>
 
 ![React](https://img.shields.io/badge/React-19.2.0-61DAFB?style=flat-square&logo=react)
 ![Vite](https://img.shields.io/badge/Vite-7.2.4-646CFF?style=flat-square&logo=vite)
