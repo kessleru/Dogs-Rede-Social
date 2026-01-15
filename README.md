@@ -246,7 +246,7 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 <div align="center">
     
-Desenvolvido com 💛 e ☕
+Desenvolvido como parte do curso da Origamid 🐺
 
 [![GitHub](https://img.shields.io/badge/GitHub-kessleru-181717?logo=github)](https://github.com/kessleru)
 
